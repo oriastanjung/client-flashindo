@@ -3,9 +3,9 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <p className="w-full bg-transparent p-6 mt-4 absolute bottom-0 mx-auto">
+      <footer className="w-full bg-bgColor p-6 text-center text-customBlack mx-auto">
         Copyright 2023 | Flashindo Computer | All Rights Reserved
-      </p>
+      </footer>
     </>
   );
 };

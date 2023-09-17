@@ -1,14 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const Button = () => {
+
+const Button = (props) => {
   return (
     <div className="mt-6">
-      <Link to="/" target="_blank">
-        <button className="rounded-md bg-primaryBlue text-white py-5 px-7">
-          Lihat Service
-        </button>
-      </Link>
+      <button
+        type={props.type}
+        onClick={props.onClick}
+        className={`rounded-md ${
+          props.isInfo
+            ? "bg-transparent text-customBlack hover:underline hover:text-primaryBlue"
+            : "bg-primaryBlue text-white hover:bg-blue-800 duration-300 transition-all"
+        }  py-5 px-7`}
+      >
+        {props.children}
+      </button>
     </div>
   );
 };
