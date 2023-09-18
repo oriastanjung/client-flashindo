@@ -10,10 +10,19 @@ const Home = () => {
     setInput(e.target.value);
   };
   const handleContactClick = () => {
-    const phoneNumber = "6281234567890";
-    const whatsappURL = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
-    window.open(whatsappURL, "_blank");
+
+        // Replace with the phone number you want to send the message to
+        const phoneNumber = `+${import.meta.env.VITE_APP_PHONE_NUMBER}`;
+  
+        // Construct the WhatsApp URL with the phone number and message
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+          `Halo *Flashindo Computer*\nSaya ingin bertanya terkait KODE service an saya dengan data berikut\n\n*Harap isi data anda*\n\nNama Konsumen : \nNo Telpon Konsumen: \nBarang yang diservice : \n\nApakah bisa saya meminta kode service an saya lagi?`
+        )}`;
+  
+        // Open the WhatsApp chat in a new tab or window
+        window.open(whatsappURL, "_blank");
+      
   };
   const navigation = useNavigate();
   const onClickBTNDetail = (e) => {
